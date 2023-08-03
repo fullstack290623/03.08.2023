@@ -12,7 +12,7 @@
         // }
 
         for(var i = 1; i <= 10; i++) {
-            var random_number = Math.floor ( Math.random() * 10 ) + 1
+            var random_number = Math.floor ( Math.random() * 3 ) + 1
             document.write(`<p><b><u>${i}:</u></b> ${i < 10 ? "&nbsp" : ""}
                             &nbsp;&nbsp; ${random_number}</p>`)
         }
@@ -21,6 +21,21 @@
         // prompt a number from the user
         // if the user wrote the correct number write BINGO in GREEN!
         // else write BAD GUESS in red , and write the lottery number
+        // *etgar: use ternary condition [?] -- one line
+        var lottery = Math.floor( Math.random() * 3 ) + 1
+        var user_number = parseInt(prompt("Guess a number 1-3: "))
+        if (user_number == lottery) {
+            document.write(`<p style="color:GREEN">BINGO!</p>`)
+        }
+        else {
+            document.write(`<p style="color:red">BAD GUESS! loto = ${lottery}, 
+                your number = ${user_number}</p>`)
+        }
+        document.write(user_number == lottery ? 
+                        `<p style="color:GREEN">BINGO!</p>` 
+                        :
+                        `<p style="color:red">BAD GUESS! loto = ${lottery}, 
+                            your number = ${user_number}</p>`)
     </script>
 </body>
 </html>
